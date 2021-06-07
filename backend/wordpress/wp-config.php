@@ -64,6 +64,9 @@ define( 'DB_CHARSET', getenv_docker('WORDPRESS_DB_CHARSET', 'utf8') );
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', getenv_docker('WORDPRESS_DB_COLLATE', '') );
 
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_DISPLAY', true );
+
 /**#@+
  * Authentication unique keys and salts.
  *
@@ -121,6 +124,9 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
 if ($configExtra = getenv_docker('WORDPRESS_CONFIG_EXTRA', '')) {
 	eval($configExtra);
 }
+
+define( 'GRAPHQL_DEBUG', true );
+
 
 /* That's all, stop editing! Happy publishing. */
 
